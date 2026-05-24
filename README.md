@@ -1,7 +1,7 @@
 
 # Phish Guard AI 🛡️🤖
 
-Phish_Guard_AI is a lightweight phishing/spam detector that runs locally in the browser. It uses a Vite + React + TypeScript frontend, an offline analyzer, and an optional trained model generated from the Kaggle SMS Spam Collection dataset.
+Phish Guard AI (Conversational AI Assistant for Phishing Detection) is a lightweight phishing/spam detector that runs locally in the browser. It uses a Vite + React + TypeScript frontend, an offline analyzer, and an optional trained model generated from the Kaggle SMS Spam Collection dataset.
 
 **Key Features**
 - **🧠 Offline Message Analysis:** the browser analyzes text locally with no Supabase or external API calls.
