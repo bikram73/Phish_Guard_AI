@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0F172A;
+    color: #F8FAFC;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1E293B;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3B82F6;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06B6D4;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+  }
+
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+  }
+
+  .neon-border-cyan {
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.1), inset 0 0 10px rgba(6, 182, 212, 0.03);
+  }
+
+  .neon-border-blue {
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.1), inset 0 0 10px rgba(59, 130, 246, 0.03);
+  }
+
+  .neon-text-cyan {
+    color: #06B6D4;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+
+  .neon-text-blue {
+    color: #3B82F6;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .btn-primary {
+    @apply bg-cyber-blue hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .threat-safe {
+    color: #22C55E;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+  }
+
+  .threat-suspicious {
+    color: #F59E0B;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  }
+
+  .threat-phishing {
+    color: #EF4444;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+  }
+}
+
+@layer utilities {
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #06B6D4, #3B82F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-danger {
+    background: linear-gradient(135deg, #EF4444, #F59E0B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(6,182,212,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* Chat scroll */
+.chat-container {
+  scroll-behavior: smooth;
+}
+
+/* Typing dots animation */
+.typing-dot {
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* Threat meter animation */
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: var(--target-width); }
+}
+
+.threat-bar {
+  animation: fillBar 1s ease-out forwards;
+}
+
+/* Scan line effect */
+@keyframes scanLine {
+  0% { top: 0%; opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scan-line {
+  animation: scanLine 2s linear infinite;
+}
